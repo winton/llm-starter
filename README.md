@@ -19,8 +19,6 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
    cp -R llm-starter/llm /path/to/your/project/
    ```
 
-   > Tip: skip the `.git` directory if your tools preserve it by default (`cp -R --no-preserve=mode,ownership`).
-
 3. **Commit the files** inside your own project’s repository.
 
 4. Open your project in Cursor (or another tool-use IDE) and follow the instructions in `/llm/README.md` to generate docs, backlog, and code.
