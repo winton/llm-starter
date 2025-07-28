@@ -6,9 +6,10 @@ Continuously suggest high-value product improvements.
 Analyse existing documentation, backlog, and knowledge base to propose new feature ideas and add them to `TODOs.md`.
 
 ## Quick Start
-1. Open `llm/projects/next-feature/prompts/01_next_feature_ideator.md` in Cursor.
-2. Run the prompt. The LLM will output up to three feature TODOs (`kind=feature`).
-3. Review/edit the backlog if desired, then run the shared code loop.
+
+1. Drag the `llm/core/` folder **and** `llm/projects/next-feature/prompts/` into the chat context.
+2. Execute. The ideator will add up to three feature TODOs.
+3. Let the core implementation loop tackle them in priority order.
 
 ## Output Example
 ```

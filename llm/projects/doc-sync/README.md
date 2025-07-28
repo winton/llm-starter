@@ -6,9 +6,12 @@ Keep documentation aligned with the codebase.
 Detect stale, missing, or inaccurate documentation by comparing source files, public APIs, and the `docs/` folder, then append TODOs (kind=`docs`) to `TODOs.md`.
 
 ## Quick Start
-1. Open `llm/projects/doc-sync/prompts/01_doc_sync_scan.md` in Cursor.
-2. Execute the prompt. If drift is detected, the LLM will append TODO lines to `TODOs.md`.
-3. Run the shared code implementation loop (`llm/core/03_code_implementation_loop.md`) to address the generated tasks.
+
+1. In your IDE (e.g., Cursor) drag **both** folders into the chat pane:  
+   • `llm/core/`  
+   • `llm/projects/doc-sync/prompts/`
+2. Run the chat. The doc-sync scan will append TODOs to `TODOs.md`.
+3. Re-run the shared implementation loop (in `llm/core/`) to tackle the new tasks.
 
 ## Output Format
 ```

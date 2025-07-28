@@ -50,3 +50,12 @@ The `llm/projects/` directory contains optional add-on workflows that extend the
 * `refactor-helper` – propose safe refactors to reduce technical debt
 
 Open a sub-project’s README to see how to run its prompts. Each project only appends TODO lines that flow straight into the shared implementation loop in `llm/core/03_code_implementation_loop.md`.
+
+---
+### Using in Cursor (or any tool-use IDE)
+
+When you execute a prompt:
+1. **Add the entire `llm/core/` directory to the chat context.**  This gives the LLM all shared loops and conventions.
+2. **Add the prompt(s) you actually want to run**—for example, the files in `llm/projects/doc-sync/prompts/`.
+
+Drag the two folders (or multi-select them) into the chat pane, then run.  No need to reference individual files; future updates to `llm/core/` will be picked up automatically.
