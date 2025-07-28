@@ -4,11 +4,9 @@ Condition: An actionable task exists in `config/todos.yaml`.
 
 Action:
 1. Select task:
-   * Identify the first incomplete epic in `config/EPICS.md`.
-   * Select the top-priority `pending` task for that epic from `config/todos.yaml`.
-   * If no task is available for the current epic but other epics have tasks, you may proceed with them.
-   * If all epics are complete, proceed to Step 5.
-   * If no actionable tasks exist at all, return to Step 3.
+   * If any epics remain **incomplete**, select the first incomplete epic in `config/EPICS.md` and choose the top-priority `pending` task for that epic from `config/todos.yaml`.
+   * Otherwise (all epics complete), select the top-priority `pending` task from `config/todos.yaml` regardless of its `epic` field (this includes maintenance or stand-alone tasks).
+   * If **no** actionable tasks exist at all, return to Step 3.
 2. Write failing test:
    * If absent, create `config/epics/<epic_slug>/outline.md` with a short plan.
    * Write the minimum test code required to reproduce a failure for the selected task. It must fail.
