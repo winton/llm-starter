@@ -1,14 +1,17 @@
 # Step 1: Project Initialization
 
-Condition: `llm/config/PROJECT_DESCRIPTION.md` does not exist.
+Condition: Any of these files is missing:
+* `config/PROJECT_DESCRIPTION.md`
+* `config/gates.yaml`
+* `config/todos.yaml`
 
 Action:
-1. Ask the operator for:
-   a. A concise, high-level description of the project.  
-   b. (If not obvious) any additional context needed to determine the project’s primary language and framework.
-2. Create or initialize the following files:
-   * `llm/config/PROJECT_DESCRIPTION.md` with the description.
-   * Create or update `llm/config/gates.yaml`, replacing placeholder values with generated shell commands for the quality gates (`test`, `lint`, `format`, `type_check`, `security_scan`).
-   * `llm/config/todos.yaml` initializing it as an empty list (`[]`) if it does not yet exist.
-3. Write or update `llm/config/state.yaml` setting `current_step: 2` and clearing any `epic_slug` or `task_id` fields.
-4. Output: the full contents of `llm/config/PROJECT_DESCRIPTION.md`, `llm/config/gates.yaml`, `llm/config/todos.yaml`, and the diff for `llm/config/state.yaml`. Stop. 
+1. If `PROJECT_DESCRIPTION.md` is missing, ask the operator for:
+   a. A concise, high-level project description.  
+   b. (If not obvious) the primary language / framework.
+2. For each file above that is missing, create it:
+   * `PROJECT_DESCRIPTION.md` – write the description.
+   * `gates.yaml` – generate shell commands for `test`, `lint`, `format`, `type_check`, `security_scan`.
+   * `todos.yaml` – initialize to an empty list (`[]`).
+3. Update `config/state.yaml` (`current_step: 2`, clear `epic_slug`, `task_id`).
+4. Show diffs/contents of the files you created or changed. 
