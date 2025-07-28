@@ -2,8 +2,6 @@
 # Project-specific commands for the LLM quality gates.
 # Replace the placeholder commands below with the actual commands for your stack.
 
-version: 1.0
-
 # Command to run the entire test suite
 test: "your-test-command --ci"  # e.g., "npm test", "pytest", "go test ./..."
 

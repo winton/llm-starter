@@ -15,7 +15,7 @@ Action:
    * Output: the diff for the test file(s).
 3. Implement code:
    * Write the minimum application code to make the test pass.
-   * Run quality gates from `config/gates.yaml`.
+   * Run all quality gates using the `llm/scripts/run_gates.sh all` command.
    * If gates fail, attempt to fix the code up to three times.
    * If still failing after three attempts, create `llm/config/REVIEW_REQUESTED.md` with the task ID, final diff, and error logs. Output its contents and stop.
    * Output: the diff for the application code.
