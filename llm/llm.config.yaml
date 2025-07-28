@@ -1,7 +1,6 @@
 # llm.config.yaml
 # Project-specific commands for the LLM to execute.
 #
-# This copy lives inside the `llm/` folder so that the framework ships self-contained.
 # Replace the placeholder commands below with the actual commands
 # for your project's technology stack.
 
@@ -9,16 +8,16 @@ version: 1.0
 
 quality_gates:
   # Command to run the entire test suite
-  test: "npm test"
+  test: "your-test-command --ci" # e.g., "npm test", "pytest", "go test ./..."
 
   # Command to run the linter, preferably with auto-fix capabilities
-  lint: "npm run lint -- --fix"
+  lint: "your-lint-command --fix" # e.g., "eslint . --fix", "ruff check . --fix"
 
   # Command to format the entire codebase
-  format: "npx prettier --write ."
+  format: "your-format-command" # e.g., "prettier --write .", "black ."
 
   # Command for static type checking, if applicable
-  type_check: "npm run tsc"
+  type_check: "your-type-check-command" # e.g., "tsc", "mypy ."
 
   # Command for a dependency vulnerability scan
-  security_scan: "npm audit" 
+  security_scan: "your-security-scan-command" # e.g., "npm audit", "pip-audit" 

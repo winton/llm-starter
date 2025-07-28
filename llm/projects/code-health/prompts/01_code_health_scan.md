@@ -22,7 +22,7 @@ We want to maintain a healthy, secure, and maintainable codebase. Each time this
      – Files > 400 lines.  
      – Functions/methods > 40 lines or cyclomatic complexity > 10.  
      – Duplicate code blocks (>20 lines) appearing ≥2 places.  
-     – Outdated patterns (callbacks vs async/await, class components vs hooks).  
+     – Outdated or sub-optimal language patterns (e.g., using older idioms when modern, safer ones are available).
      – TODO/FIXME comments older than 30 days (if datestamped).
 
 3. **Prioritise & classify**

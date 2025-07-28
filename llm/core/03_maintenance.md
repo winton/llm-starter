@@ -10,14 +10,15 @@ Run the **Maintenance Loop** below to keep the knowledge base current **and** pr
 ## Maintenance Loop
 
 1. **Synthesize Knowledge**
-   * Execute the same steps as the former `03_synthesize_knowledge.md` prompt:
+   * **Goal**: To produce a high-level, factual, and verifiable summary of the project's current state.
+   * **Process**:
      1. Ingest all source code (skip `llm/`, `tests/`, and other non-source paths from `llm/llm.config.yaml`).
      2. Read existing docs in `docs/` and the `knowledge/` directory.
-     3. Detect architectural patterns, conventions, and key decisions.
-     4. Update or create:
-        * `knowledge/ARCHITECTURE.md`
-        * `knowledge/CONVENTIONS.md`
-        * `knowledge/adr/` – numbered Architecture Decision Records (ADRs) following the Markdown template in [ADR-000](https://adr.github.io/madr/)
+     3. Based on the code, update or create the following files in the `knowledge/` directory:
+        * `knowledge/SYSTEM_OVERVIEW.md`: A high-level description of the main components and how they interact.
+        * `knowledge/DATA_MODELS.md`: A summary of the key data structures, database schemas, or API objects used in the project.
+        * `knowledge/DEPENDENCY_GRAPH.md`: A list or diagram showing the dependencies between major modules or services.
+     4. If you identify a significant architectural decision that is not yet documented, create a new ADR file in `knowledge/adr/` using the template from `llm/ADR_TEMPLATE.md`.
    * Capture diffs for any modified files. If nothing changed, note `Knowledge base is up to date.`
 
 2. **Check for Completed Epic**
@@ -30,7 +31,7 @@ Run the **Maintenance Loop** below to keep the knowledge base current **and** pr
    3. **Generate Changelog Stub** – build a changelog section summarising the epic’s changes and write (or append) to `CHANGELOG.md`.
 
 4. **Next Steps**
-   * If the Release Prep sequence added tasks to `llm/todos.yaml`, instruct the operator to resume the Feature Implementation Loop (`llm/core/02_feature_implementation_loop.md`) until the backlog is clear.
+   * If the Release Prep sequence added tasks to `llm/todos.yaml`, instruct the operator to resume the Feature Implementation Loop (running `02a` through `02d`) until the backlog is clear.
    * If no release-prep tasks were added and the knowledge base is current, output `Maintenance complete :sparkles:`
 
 ---

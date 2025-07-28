@@ -8,15 +8,18 @@ This directory was **copied from** [github.com/winton/llm-starter](https://githu
 
 ## Quick Start
 
-1.  **Describe your idea.**
-    Create `PROJECT_DESCRIPTION.md` at the repository root and write a clear, high-level description of what you would like to build (features, requirements, tech stack, constraints, etc.).
-2.  **Define project commands.**
-    Ensure `llm/llm.config.yaml` specifies the shell commands for testing, linting, formatting, and scans. This is critical for reliable execution.
-3.  **Generate the Epic Outline.**
+1.  **Run the setup prompt.**
+    Open `llm/core/00_project_setup.md` in your chat panel and follow the instructions. This will generate your `PROJECT_DESCRIPTION.md` and `llm/llm.config.yaml` files automatically.
+2.  **Generate the Epic Outline.**
     Open `llm/core/01_create_epic_outline.md` in your chat panel and execute the prompt once. It will create `docs/EPICS.md`, a high-level list of features to build.
-4.  **Implement features iteratively.**
-    Open `llm/core/02_feature_implementation_loop.md` and run it repeatedly. Each run will pick the next epic, document it, generate tasks, and implement them using a test-driven development cycle until all epics are complete.
-5.  **Run periodic maintenance.**
+3.  **Implement features iteratively.**
+    Repeatedly run the feature implementation prompts in order:
+    *   `02a_select_next_task.md`
+    *   `02b_write_failing_test.md`
+    *   `02c_implement_code.md`
+    *   `02d_refactor_and_update_status.md`
+    This cycle implements one task at a time using a test-driven development approach.
+4.  **Run periodic maintenance.**
     Execute `llm/core/03_maintenance.md` whenever you finish an epic or want to update the knowledge base and run release checks.
 
 ---
@@ -24,14 +27,15 @@ This directory was **copied from** [github.com/winton/llm-starter](https://githu
 ## Files & directories created along the way
 
 ```
+PROJECT_DESCRIPTION.md      – your high-level project plan (step 1)
+llm/llm.config.yaml         – project-specific commands (step 1)
 docs/
-  EPICS.md                  – high-level feature list (step 3)
+  EPICS.md                  – high-level feature list (step 2)
 epics/
   <epic_slug>/
-    outline.md              – just-in-time docs for one epic (step 4)
-llm/todos.yaml              – engineering backlog, structured YAML (step 4)
+    outline.md              – just-in-time docs for one epic (step 3)
+llm/todos.yaml              – engineering backlog, structured YAML (step 3)
 tests/                      – added incrementally by the feature loop
-llm/llm.config.yaml         – project-specific commands (step 2)
 REVIEW_REQUESTED.md         - created when the LLM needs human help
 ```
 
