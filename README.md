@@ -21,7 +21,7 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
 
 3.  **Commit the files** inside your own project’s repository.
 
-4.  Open the project in Cursor (or another tool-use IDE), add the `llm/` directory to the chat context, then run `llm/prompts/prompt.md` and say "continue". The master prompt will take it from there.
+4.  Open the project in Cursor (or another tool-use IDE), add `llm/prompts/prompt.md` to the chat context, and say "continue". **The framework will auto-detect your stack and generate sensible defaults—no manual setup needed.**
 
 ---
 ## Updating `llm/`

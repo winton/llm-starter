@@ -5,6 +5,7 @@ Condition: All epics in `config/EPICS.md` are done.
 Action:
 1. Synthesize knowledge:
    * Scan source code and docs (`config/epics/`, `config/knowledge/`).
+   * **If the host repository has a top-level `docs/` folder, reference or link existing documents instead of regenerating duplicates.**
    * Update high-level docs in `config/knowledge/` (`SYSTEM_OVERVIEW.md`, `DATA_MODELS.md`).
    * For any missing ADRs, add one under `config/knowledge/adr/` via `ADR_TEMPLATE.md`.
 2. Run health scans:

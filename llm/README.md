@@ -52,3 +52,14 @@ llm/config/REVIEW_REQUESTED.md - created when the LLM needs human help
 *   **Agile, Vertical Slices**: Deliver complete, tested features one at a time.
 *   **Write before you code**: Just-in-time docs for each feature prevent rework.
 *   **Red-Green-Refactor**: Failing tests are written before code, ensuring continuous verification.
+
+## Auto-detection & Zero-Config Setup
+
+Drop `llm/` into **any existing repository** and run the master prompt – the framework will:
+
+1. Scan the repo for language sentinel files (e.g. `package.json`, `pyproject.toml`, `go.mod`).
+2. Populate `llm/config/gates.yaml` with sensible defaults (`test`, `lint`, `format`, `type_check`, `security_scan`).
+3. Extract the first paragraph of the root `README.md` as the initial project description.
+4. Prompts or CI can invoke `./llm/scripts/run_gates.sh` (runs **all** gates) or `./llm/scripts/run_gates.sh test` (single gate) regardless of shell.
+
+No manual questions are asked unless a value can’t be inferred.
