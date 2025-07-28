@@ -1,5 +1,7 @@
 # Step 4: Test-Driven Feature Implementation
 
+!include ../../partials/shared_guidelines.md
+
 Condition: An actionable task exists in `config/todos.yaml`.
 
 Action:
@@ -19,10 +21,12 @@ Action:
    * Output: the diff for the application code.
 4. Refactor & update backlog:
    * Optionally refactor the code just written. Re-run tests if you do.
-   * Update the task’s `status` to `completed` in `config/todos.yaml`.
-   * Show diffs for `todos.yaml` and any refactored files.
+   * Remove the completed task entry from `config/todos.yaml` and append it (including a new `completed_at` timestamp) to `config/todos_archived.yaml`.
+   * Append a one-sentence summary of the completed task to its epic outline (`config/epics/<epic_slug>/outline.md`).
+   * Show diffs for `todos.yaml`, `todos_archived.yaml`, and any refactored files.
 5. Update `config/state.yaml` with:
-   * `current_step`: 4 if actionable tasks remain, otherwise 5.
-   * `epic_slug`: the current epic slug (or empty if none remain).
-   * `task_id`: the ID of the task you just completed (or empty if none remain).
+   * `step`: 4 if actionable tasks remain, otherwise 5.
+   * `epic`: the current epic slug (or empty if none remain).
+   * `task`: the ID of the task you just completed (or empty if none remain).
+   * `detected`: true
 6. Show diff for `state.yaml`. 

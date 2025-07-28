@@ -1,5 +1,7 @@
 # Step 5: Maintenance & Knowledge Synthesis
 
+!include ../../partials/shared_guidelines.md
+
 Condition: All epics in `config/EPICS.md` are done.
 
 Action:
@@ -13,5 +15,5 @@ Action:
    * Perform a doc-sync scan (documentation drift).
    * Append findings as tasks to `config/todos.yaml` (`project: maintenance`).
 3. Show diffs for updated `knowledge/` files and `todos.yaml` (or say `Maintenance complete :sparkles:` if nothing changed).
-4. Update `config/state.yaml` (`current_step: 4` **if actionable `pending` tasks exist in `config/todos.yaml`, otherwise `current_step: 5`**, clear `epic_slug`, `task_id`).
+4. Update `config/state.yaml` (`step`: 4 if actionable `pending` tasks exist in `config/todos.yaml`, otherwise `step`: 5, `epic`: "", `task`: "", `detected`: true).
 5. Show diff for `state.yaml`. 

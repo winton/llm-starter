@@ -1,5 +1,7 @@
 # Step 2: Epic Outline Generation
 
+!include ../../partials/shared_guidelines.md
+
 Condition: `config/PROJECT_DESCRIPTION.md` exists, but `config/EPICS.md` is missing.
 
 Action:
@@ -9,5 +11,5 @@ Action:
    * For each identified feature or module, create an epic title (using a directory name, `README.md` heading, or a descriptive name derived from the `PROJECT_DESCRIPTION.md` or code) and a one-sentence summary.
    * Ensure all key features outlined in `PROJECT_DESCRIPTION.md` are represented as epics.
 2. Create `config/EPICS.md` with the list.
-3. Update `config/state.yaml` (`current_step: 3`, clear context).
+3. Update `config/state.yaml` (`step: 3`, `epic: ""`, `task: ""`, `detected: true`).
 4. Show diffs/contents for `EPICS.md` and `state.yaml`.  
