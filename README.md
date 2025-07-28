@@ -21,12 +21,12 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
 
 3.  **Commit the files** inside your own project’s repository.
 
-4.  Open your project in Cursor (or another tool-use IDE) and follow the instructions in `/llm/README.md` to generate your project backlog and code.
+4.  Open the project in Cursor (or another tool-use IDE), add the `llm/` directory to the chat context, then run `llm/prompts/prompt.md` and say "continue". The master prompt will take it from there.
 
 ---
 ## Updating `llm/`
 
-Future improvements to the framework will appear in this repo. To upgrade, simply replace the `llm/` folder in your project with the latest version from `main` and commit the changes.
+Future improvements to the framework will appear in this repo. To upgrade, simply replace the `llm/prompts` folder in your project with the latest version from `main` and commit the changes.
 
 ---
 ## License
