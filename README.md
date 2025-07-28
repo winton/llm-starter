@@ -7,21 +7,21 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
 ---
 ## Installation
 
-1. **Clone or download this repo** (do *not* initialise it as a sub-module—you only need the files once).
+1.  **Clone or download this repo** (do *not* initialise it as a sub-module—you only need the files once).
 
-   ```bash
-   git clone https://github.com/winton/llm-starter.git
-   ```
+    ```bash
+    git clone https://github.com/winton/llm-starter.git
+    ```
 
-2. **Copy the `llm/` directory** (and nothing else) into the root of your target project:
+2.  **Copy the `llm/` directory** (and nothing else) into the root of your target project:
 
-   ```bash
-   cp -R llm-starter/llm /path/to/your/project/
-   ```
+    ```bash
+    cp -R llm-starter/llm /path/to/your/project/
+    ```
 
-3. **Commit the files** inside your own project’s repository.
+3.  **Commit the files** inside your own project’s repository.
 
-4. Open your project in Cursor (or another tool-use IDE) and follow the instructions in `/llm/README.md` to generate docs, backlog, and code.
+4.  Open your project in Cursor (or another tool-use IDE) and follow the instructions in `/llm/README.md` to generate your project backlog and code.
 
 ---
 ## Updating `llm/`
