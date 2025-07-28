@@ -16,7 +16,7 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
 2.  **Copy the `llm/` directory** (and nothing else) into the root of your target project:
 
     ```bash
-    cp -R llm-starter/llm /path/to/your/project/
+    cp -R llm-starter/llm yourproject/
     ```
 
 3.  **Commit the files** inside your own project’s repository.
@@ -26,7 +26,12 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
 ---
 ## Updating `llm/`
 
-Future improvements to the framework will appear in this repo. To upgrade, simply replace the `llm/prompts` folder in your project with the latest version from `main` and commit the changes.
+Future improvements to the framework will appear in this repo. To upgrade, simply replace the `llm/prompts` folder in your project with the latest version from `main` and commit the changes:
+
+    ```bash
+    rm -rf yourproject/llm/prompts
+    cp -R llm-starter/llm/prompts yourproject/llm/
+    ```
 
 ---
 ## License
