@@ -28,10 +28,10 @@ This repository’s **only job** is to provide the `llm/` directory. Drop that f
 
 Future improvements to the framework will appear in this repo. To upgrade, simply replace the `llm/prompts` folder in your project with the latest version from `main` and commit the changes:
 
-    ```bash
-    rm -rf yourproject/llm/prompts
-    cp -R llm-starter/llm/prompts yourproject/llm/
-    ```
+```bash
+rm -rf yourproject/llm/prompts
+cp -R llm-starter/llm/prompts yourproject/llm/
+```
 
 ---
 ## License
