@@ -3,7 +3,7 @@
 Continuously suggest high-value product improvements.
 
 ## Purpose
-Analyse existing documentation, backlog, and knowledge base to propose new feature ideas and add them to `TODOs.md`.
+Analyse existing documentation, backlog, and knowledge base to propose new feature ideas and add them to `llm/todos.yaml`.
 
 ## Quick Start
 
@@ -12,6 +12,12 @@ Analyse existing documentation, backlog, and knowledge base to propose new featu
 3. Let the core implementation loop tackle them in priority order.
 
 ## Output Example
-```
-Add dark-mode toggle [priority=medium, area=frontend, estimate=8, project=next-feature, kind=feature]
+```yaml
+- id: FEAT-22
+  content: Add dark-mode toggle
+  priority: medium
+  area: frontend
+  estimate: 8
+  project: next-feature
+  kind: feature
 ``` 

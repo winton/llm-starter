@@ -1,6 +1,7 @@
 # llm.config.yaml
 # Project-specific commands for the LLM to execute.
 #
+# This copy lives inside the `llm/` folder so that the framework ships self-contained.
 # Replace the placeholder commands below with the actual commands
 # for your project's technology stack.
 
@@ -20,13 +21,4 @@ quality_gates:
   type_check: "npm run tsc"
 
   # Command for a dependency vulnerability scan
-  security_scan: "npm audit"
-
-# Paths to exclude from all LLM-initiated scans and edits.
-# The core llm/ directory is always excluded by default.
-exclude_paths:
-  - "dist/"
-  - "build/"
-  - "node_modules/"
-  - "venv/"
-  - ".git/" 
+  security_scan: "npm audit" 
