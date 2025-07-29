@@ -21,9 +21,9 @@ Action:
    * Output: the diff for the application code.
 4. Refactor & update backlog:
    * Optionally refactor the code just written. Re-run tests if you do.
-   * Remove the completed task entry from `state/todos.yaml` and append it (including a new `completed_at` timestamp) to `state/complete.yaml`.
+   * Remove the completed task entry from `state/todos.yaml` and append it (including a new `completed_at` timestamp) to `state/ended.yaml`.
    * Append a one-sentence summary of the completed task to its epic outline (`state/epics/<epic_slug>/outline.md`).
-   * Show diffs for `todos.yaml`, `complete.yaml`, and any refactored files.
+   * Show diffs for `todos.yaml`, `ended.yaml`, and any refactored files.
 5. Update `state/state.yaml` with:
    * `step`: 4 if actionable tasks remain, otherwise 5.
    * `epic`: the current epic slug (or empty if none remain).
