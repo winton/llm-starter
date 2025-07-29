@@ -1,11 +1,11 @@
 # Step 1: Project Initialization
 
-!include ../../partials/shared_guidelines.md
+!include ../partials/shared_guidelines.md
 
 Condition: Any of these files is missing:
-* `config/PROJECT_DESCRIPTION.md`
-* `config/gates.yaml`
-* `config/todos.yaml`
+* `state/PROJECT_DESCRIPTION.md`
+* `state/gates.yaml`
+* `state/todos.yaml`
 
 Action:
 0. **Auto-detect project stack (skip if already detected in this run):**
@@ -22,5 +22,5 @@ Action:
    * `todos.yaml` – initialise to an empty list (`[]`).
    * `todos_archived.yaml` – initialise to an empty list (`[]`).
    * `scripts/run_gates.sh` – cross-shell wrapper that executes the selected gate from `gates.yaml` (created if absent, executable bit set).
-3. Update `config/state.yaml` (`step: 2`, `epic: ""`, `task: ""`, `detected: true`).
+3. Update `state/state.yaml` (`step: 2`, `epic: ""`, `task: ""`, `detected: true`).
 4. Show diffs/contents of the files you created or changed. 
