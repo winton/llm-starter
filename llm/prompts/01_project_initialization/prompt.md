@@ -20,7 +20,7 @@ Action:
    * `PROJECT_DESCRIPTION.md` – write the description.
    * `gates.yaml` – merge inferred commands with any existing keys instead of overwriting the whole file.
    * `todos.yaml` – initialise to an empty list (`[]`).
-   * `todos_archived.yaml` – initialise to an empty list (`[]`).
+   * `complete.yaml` – initialise to an empty list (`[]`).
    * `scripts/run_gates.sh` – cross-shell wrapper that executes the selected gate from `gates.yaml` (created if absent, executable bit set).
 3. Update `state/state.yaml` (`step: 2`, `epic: ""`, `task: ""`, `detected: true`).
 4. Show diffs/contents of the files you created or changed. 
