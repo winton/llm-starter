@@ -8,6 +8,7 @@ Drop this file into your LLM chat. It defines how to discover agents, track stat
 llm/
   agents/     # agent prompts
   ledgers/    # state, tasks, configs
+  agents.md   # agent list
   start.md    # entrypoint
 ```
 
