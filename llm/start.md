@@ -1,90 +1,64 @@
-# start.md — Agentic System Bootstrap (drag into your preferred LLM IDE)
+# start.md — Agentic System Bootstrap
 
-> Drop this file into your preferred LLM IDE as the entrypoint. It describes the project layout and metadata schema so the LLM can retrieve available agents and automatically route your request to the most suitable agent.
+Drop this file into your LLM chat. It defines how to discover agents, track state, and route work.
 
 ## Directory Layout
 
 ```text
 llm/
   agents/     # agent prompts
-  ledgers/    # state/context
-  yaml/       # non-append configuration
+  ledgers/    # state, tasks, configs
   start.md    # entrypoint
 ```
 
 ## Markdown Object Schema
 
-Every object follows the same skeleton:
+Every object uses the same skeleton:
 
 ```markdown
-# <agent-id>              # agent id header (required)
-- key: value              # metadata list (≥1 line, optional)
-- key: value
-...
+# <agent-id or topic>        # required
+- schema: agent|task|decision|info|anchor
+- key: value                 # metadata (optional, ≥1 line)
 
-<Markdown body>           # free-form until next 1st-level heading
+<Markdown body>              # freeform description or instructions
 ```
 
-## Agent Prompt File (`agents/<agent-id>.md`)
+### Metadata (Minimal, Universal)
 
-| key | required | description |
-|-----|----------|-------------|
-| scope | yes | mission statement |
-| input | optional | input types |
-| call | optional | downstream agent IDs (omit or 'none' if no calls) |
-| ledger | yes | ledger namespaces |
-| yaml | yes | yaml namespaces |
+| Key         | Description                                                            |
+| ----------- | ---------------------------------------------------------------------- |
+| **schema**  | Object type: `agent`, `task`, `decision`, `info`, or `anchor`.         |
+| **summary** | ≤1‑line description or mission.                                        |
+| **status**  | State label, e.g. `open`, `in-progress`, `done` (use when meaningful). |
+| **owner**   | Responsible party (agent ID, user, or team).                           |
+| **refs**    | Related files, URLs, or ledger IDs (comma‑separated).                  |
+| **next**    | Follow‑up actions or suggested next tasks.                             |
 
-**Example**
+> Use only the keys that add value for the entry. Everything else goes in the body.
 
-```markdown
-# doc-sync
-- scope: keep code & docs identical
-- input: diff | path
-- call: test-guardian, planner
-- ledger: global, doc-sync
-- yaml: doc-sync
-
-Review and update `docs/`, ensuring that it serves as a mirror to the code.
-```
-
-## Ledger File (`ledgers/<global|agent-id|*>.md`)
-
-Contains multiple Markdown Object Schema entries (append-only) for state/context tracking.
-Ledger entries must follow the Markdown Object Schema above, focusing on recording completed work, suggested next tasks, important decisions, and useful information.
-
-| key | required | description |
-|-----|----------|-------------|
-| schema | yes | `Info`, `Feature`, `Decision`, `Task`, `Anchor` |
-| summary | yes | ≤1-line description |
-| refs | yes | files or URLs (comma list) |
-| next | no | suggested follow-up work |
-
-**Example**
+## Agent File (`agents/<agent-id>.md`)
 
 ```markdown
-# doc-sync
-- schema: Task
-- summary: password reset flow
-- refs: auth/user.ts:77-110
-- next: add nil-user-id test
+# password-reset-flow
+- schema: task
+- summary: document password reset flow
+- status: in-progress
+- owner: doc-sync
+- refs: auth/user.ts:77-110, docs/api.md
+- next: add nil-user-id test case to examples
 
 Supports password resets via both email and SMS tokens.
 
-# doc-sync
-- schema: Decision
+# session-token-strategy
+- schema: decision
 - summary: use JWT for session tokens
-- refs: auth/session.ts:45-67, auth/config.ts:12-15, docs/api.md
-- next: implement refresh token rotation
+- owner: reviewer
+- refs: auth/session.ts:45-67, docs/api.md
+- next: propose refresh token rotation policy
 
-Chose JWT over database sessions for better scalability.
+Chose JWT over DB-backed sessions to reduce load and simplify horizontal scaling.
 ```
 
-## YAML File (`yaml/*.yaml`)
+## Principle
 
-The YAML directory is for non-append configuration at the discretion of the agent.
-
-## Post-Execution
-- After completing an action, provide a concise summary of the work performed.
-- Review any ledger entries for defined `next` fields.
-- Propose the upcoming tasks by referencing those `next` values.
+After each action, **append a ledger entry** summarizing the work and listing any follow-up tasks.

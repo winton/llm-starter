@@ -1,6 +1,7 @@
 # agent-gen
-- scope: convert a raw prompt into a compliant agent file
-- inputs: raw_prompt
+- schema: agent
+- summary: convert a raw prompt into a compliant agent file
+- input: raw_prompt
 - calls: none
 - ledgers: agent-gen
 
@@ -19,8 +20,9 @@ Transform a raw agent description into a repository-compliant agent prompt store
 
 ```markdown
 # <id>
-- scope: <one-sentence mission>
-- inputs: <channels or none>
+- schema: agent
+- summary: <one-sentence mission>
+- input: <channels or none>
 - calls: <comma-list or none>
 - ledgers: <global or agent-id>
 ```
@@ -38,8 +40,9 @@ Transform a raw agent description into a repository-compliant agent prompt store
 
 ```markdown
 # docs-sync
-- scope: keep docs consistent with code
-- inputs: diff
+- schema: agent
+- summary: keep docs consistent with code
+- input: diff
 - calls: none
 - ledgers: docs-sync
 
@@ -62,22 +65,22 @@ The resulting agent file should fit on one screen (≈150 lines) and stay as min
 
 **Notes**
 
-- Be explicit & specific; state desired outputs clearly.  
-- Supply context/motivation to shape responses.  
-- Include aligned examples; details drive behavior.  
-- Prefer positive directives over negations.  
-- Match prompt style to desired output style.  
-- Guide reflection & planning after tool results.  
-- Encourage parallel tool calls for efficiency.  
-- Allow temp files for iteration; clean them after.  
-- Boost frontend: ask for rich features & micro-UX.  
-- Use modifiers (“give it your all”, “add details”).  
-- Request animations & interactive elements plainly.  
-- Cite design principles: hierarchy, contrast, balance.  
-- Demand general algorithms; no test-specific hacks.  
-- Emphasize robustness, maintainability, extensibility.  
-- Tests verify, not define, the solution logic.  
-- Prompt to flag infeasible tasks or bad tests.  
-- Explain constraints (e.g., no ellipses) & reasons.  
-- In migrations, spell out upgraded behaviors needed.  
-- More specificity ⇒ better results. 
+- Be explicit and specific by clearly stating desired outputs; for instance, instead of a generic request, ask for a 'fully-featured implementation' to encourage more comprehensive results.
+- Supply context or motivation behind instructions to shape responses, as explaining the 'why' (e.g., for a text-to-speech engine) helps the model generalize the core principle better.
+- Include examples that are precisely aligned with desired behaviors and formatting, as the model pays close attention to every detail and will replicate the patterns you provide.
+- Prefer positive framing for directives over negative ones for format control; for example, say 'write in flowing prose paragraphs' instead of 'do not use markdown formatting'.
+- Match your prompt's own formatting and writing style to the desired output style, as the model often mirrors the input's structure and tone in its generated response.
+- Guide the model's reflection and interleaved thinking process, especially after receiving tool results, to better handle complex, multi-step reasoning and planning tasks.
+- Explicitly encourage parallel tool calls for maximum efficiency by instructing the model to invoke multiple independent tools simultaneously rather than sequentially.
+- Allow the model to use temporary files or a 'scratchpad' for iteration in coding tasks, but always include an instruction to clean up and remove those files upon completion.
+- Boost frontend code generation by using encouraging, open-ended modifiers like 'give it your all' or 'create an impressive demonstration' to inspire more complex and detailed designs.
+- Request specific, thoughtful user experience details like hover states, smooth transitions, and other micro-interactions to enrich frontend components.
+- When generating UI, explicitly request that the model apply fundamental design principles such as hierarchy, contrast, balance, and movement for a professional result.
+- For animations and interactive elements, request them plainly and specifically instead of assuming the model will add them by default.
+- Demand high-quality, general-purpose algorithms that solve the core problem for all valid inputs, not just clever hacks that are hard-coded to pass specific test cases.
+- Emphasize the importance of robust, maintainable, and extensible solutions, guiding the model to produce principled implementations that follow software design best practices.
+- Reinforce that tests exist to verify correctness, not to define the solution's logic, steering the model away from a narrow focus on passing tests at all costs.
+- Explicitly prompt the model to flag and report when a given task appears unreasonable, is technically infeasible, or if the provided tests seem incorrect or flawed.
+- When imposing constraints, always explain the underlying reason (e.g., 'no ellipses because a text-to-speech engine will read it aloud'), as this helps the model learn the rule.
+- When migrating from older models, be highly specific about the desired upgraded behaviors and explicitly describe the exact output you now expect to see.
+- Remember that increased specificity and detail in your instructions are the most reliable ways to achieve higher-quality results from advanced models. 
