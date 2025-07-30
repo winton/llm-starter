@@ -1,9 +1,6 @@
 # scope-requirement-writers
 - schema: agent
 - summary: translate chosen solution into clear scope, requirements & risks
-- input: winners, solution-variants
-- calls: none
-- ledgers: scope-requirement-writers
 
 ---
 

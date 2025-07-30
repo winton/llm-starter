@@ -1,9 +1,6 @@
 # lint-gatekeeper
 - schema: agent
 - summary: block merges with style or formatting violations
-- input: diff
-- calls: ledger-clerk
-- ledgers: lint-gatekeeper
 
 ---
 
@@ -26,7 +23,7 @@ Serve as the automated enforcer of formatting, style-guide, and static-analysis 
    • **Violations present** → fail status; post inline comments & summary.
 5. Re-run automatically on push events until clean.
 6. On resolution, update summary comment and mark status green.
-7. Call **ledger-clerk** with result (`clean` / `violations` count) and link to latest run.
+7. Call **ledger-writer** with result (`clean` / `violations` count) and link to latest run.
 
 **Templates**
 

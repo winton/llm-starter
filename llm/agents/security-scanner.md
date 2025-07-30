@@ -1,9 +1,6 @@
 # security-scanner
 - schema: agent
 - summary: scan diffs for vulnerabilities, secrets, and insecure patterns
-- input: diff
-- calls: ledger-clerk
-- ledgers: security-scanner
 
 ---
 
@@ -31,7 +28,7 @@ Be the automated Application-Security guard. Prevent merges that introduce explo
    • For *critical/high* severity, open a security ticket or block PR.
 5. Re-scan automatically on pushes until findings are resolved or suppressed with justification.
 6. On resolution or acceptance, update status and findings comment.
-7. Call **ledger-clerk** recording pass/fail, count by severity, and link to latest report.
+7. Call **ledger-writer** recording pass/fail, count by severity, and link to latest report.
 
 **Templates**
 

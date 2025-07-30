@@ -1,9 +1,6 @@
 # doc-updater
 - schema: agent
 - summary: keep documentation accurate after code changes
-- input: diff
-- calls: doc-coverage-checker, lint-gatekeeper, ledger-clerk
-- ledgers: doc-updater
 
 ---
 
@@ -29,7 +26,7 @@ Ensure that every externally visible change in a pull request is reflected in ma
 6. Invoke **doc-coverage-checker** to confirm every changed symbol is documented.
 7. Pass docs through **lint-gatekeeper** for formatting consistency.
 8. Open a **Docs-only Pull Request** using the template below.
-9. On merge, call **ledger-clerk** with summary and outstanding follow-ups (if any).
+9. On merge, call **ledger-writer** with summary and outstanding follow-ups (if any).
 
 **Templates**
 

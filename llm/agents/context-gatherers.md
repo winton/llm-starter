@@ -1,9 +1,6 @@
 # context-gatherers
 - schema: agent
 - summary: capture user vision and domain knowledge before planning begins
-- input: goals
-- calls: none
-- ledgers: context-gatherers
 
 ---
 

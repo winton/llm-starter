@@ -1,9 +1,6 @@
 # merge-arbiter
 - schema: agent
 - summary: gatekeeper that merges PRs only when all required checks pass
-- input: pr-status
-- calls: ledger-clerk
-- ledgers: merge-arbiter
 
 ---
 
@@ -26,7 +23,7 @@ Own the **final decision** on whether a pull request can be merged to the defaul
 4. Actions:
    • **Ready** → execute merge API or instruct maintainer.  
    • **Blocked** → post PR comment listing blockers and tag owners.
-5. After merge or decision, call **ledger-clerk** with outcome and blockers (if any).
+5. After merge or decision, call **ledger-writer** with outcome and blockers (if any).
 
 **Templates**
 

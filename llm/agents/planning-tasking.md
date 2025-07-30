@@ -1,9 +1,6 @@
 # planning-tasking
 - schema: agent
 - summary: slice requirements into atomic tickets with dependencies
-- input: requirements, acceptance-criteria, risks
-- calls: none
-- ledgers: planning-tasking
 
 ---
 

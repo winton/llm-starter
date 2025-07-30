@@ -1,9 +1,6 @@
 # agents-catalog
 - schema: agent
 - summary: maintain `llm/agents.md` overview of all agents
-- input: none
-- calls: none
-- ledgers: agents-catalog
 
 ---
 
@@ -14,34 +11,32 @@ Maintain and regenerate `llm/agents.md`, a concise overview of every agent promp
 **Process**
 
 1. Enumerate all markdown files under `llm/agents/`, excluding `agents-catalog.md`.
-2. For each file, parse the metadata block to collect `id`, `summary`, `input`, and `calls` fields.
-3. Assemble the **Agents Table** listing these fields (use `none` when a field is absent).
-4. Construct the **Flow Diagram** using mermaid `graph TD`, drawing an edge from each agent to every agent listed in its `calls` field.
+2. For each file, parse the metadata block to collect `id` and `summary` fields.
+3. Assemble the **Agents Table** listing these fields.
+4. Construct the **Flow Diagram** using mermaid `graph TD`, with standalone nodes for each agent (no edges required).
 5. Write or overwrite `llm/agents.md` with:
-   • A heading and UTC ISO timestamp.  
+   • A heading.  
    • The generated **Agents Table**.  
    • The **Flow Diagram**.
-6. Append a ledger entry recording the timestamp, agent count, and file hash of the written document.
-7. If any agent references an unknown `calls` target, list these in an **Issues** section at the bottom and set `status: warning` in the ledger entry.
+6. Append a ledger entry recording the agent count and file hash of the written document.
 
 **Templates**
 
 ```markdown
 # Agents Overview
-_Generated: 2024-07-30T12:34:56Z_
 
 ## Agents
-| id | summary | input | calls |
-| -- | ------- | ----- | ----- |
-| agent-gen | convert a raw prompt into a compliant agent file | raw_prompt | none |
-| agents-catalog | maintain llm/agents.md overview | none | none |
-| ... | ... | ... | ... |
+| id | summary |
+| -- | ------- |
+| agent-gen | convert a raw prompt into a compliant agent file |
+| agents-catalog | maintain llm/agents.md overview |
+| ... | ... |
 
 ```mermaid
 graph TD
-  agent-gen --> agents-catalog
+  agent-gen
+  agents-catalog
   ...
-```
 ```
 
 **Notes**

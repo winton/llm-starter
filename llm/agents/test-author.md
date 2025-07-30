@@ -1,9 +1,6 @@
 # test-author
 - schema: agent
 - summary: generate or update automated tests for a given code change
-- input: diff
-- calls: lint-gatekeeper, ledger-clerk
-- ledgers: test-author
 
 ---
 
@@ -29,7 +26,7 @@ Guarantee that every behavioral change in a pull request is protected by fast, r
 6. Ensure code coverage meets project threshold; add additional cases if needed.
 7. Quality gate: run formatter & linter on test files via **lint-gatekeeper**.
 8. Commit tests in a branch, push, and open a **Tests-only Pull Request** using the template below.
-9. On merge, call **ledger-clerk** with coverage delta and PR URL.
+9. On merge, call **ledger-writer** with coverage delta and PR URL.
 
 **Templates**
 

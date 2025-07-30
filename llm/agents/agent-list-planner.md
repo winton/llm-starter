@@ -1,9 +1,6 @@
 # agent-list-planner
 - schema: agent
 - summary: break a user goal into a minimal set of micro-agents
-- input: goal
-- calls: none
-- ledgers: agent-list-planner
 
 ---
 
@@ -20,19 +17,19 @@ Design an end-to-end lineup of narrowly-scoped agents that together achieve a gi
    • Output of one agent is usable input for the next.  
    • No agent exceeds ≈150 lines in its own prompt.
 4. For every micro-agent choose a unique, kebab-case `id` (check `llm/agents/` for collisions).
-5. Draft metadata for each agent: `summary`, `input`, `calls` (or `none`), `ledgers`.
+5. Draft metadata for each agent: `summary`.
 6. Output the lineup in the **Proposed Agents** table plus a brief **Flow Diagram** (mermaid `graph TD`).
-7. Append a ledger entry with the proposed agent list and UTC timestamp.
+7. Append a ledger entry with the proposed agent list.
 8. If critical ambiguities exist, list them as **Follow-up Questions** and halt.
 
 **Templates**
 
 ```markdown
 ## Proposed Agents
-| id | summary | input | output |
-| -- | ------- | ----- | ------ |
-| context-gatherers | capture goals & domain insights | goal | objectives, domain-insights |
-| ... | ... | ... | ... |
+| id | summary |
+| -- | ------- |
+| context-gatherers | capture goals & domain insights |
+| ... | ... |
 
 ```mermaid
 graph TD

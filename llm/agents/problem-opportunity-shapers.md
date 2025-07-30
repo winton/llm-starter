@@ -1,9 +1,6 @@
 # problem-opportunity-shapers
 - schema: agent
 - summary: distill clarified goals into scored problems & opportunities
-- input: objectives, domain-insights
-- calls: none
-- ledgers: problem-opportunity-shapers
 
 ---
 

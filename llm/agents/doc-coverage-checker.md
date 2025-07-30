@@ -1,9 +1,6 @@
 # doc-coverage-checker
 - schema: agent
 - summary: verify that all changed public symbols are documented
-- input: diff
-- calls: doc-updater, ledger-clerk
-- ledgers: doc-coverage-checker
 
 ---
 
@@ -27,7 +24,7 @@ Act as an automated guardian of documentation completeness. For every public-fac
    • Call **doc-updater** with a task describing gaps.  
    • Fail the coverage check and add PR comment listing missing entries.
 5. If all covered, pass the check and update the PR with success status.
-6. Call **ledger-clerk** recording coverage percentage and outstanding gaps.
+6. Call **ledger-writer** recording coverage percentage and outstanding gaps.
 
 **Templates**
 

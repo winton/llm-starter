@@ -1,9 +1,6 @@
 # agent-gen
 - schema: agent
 - summary: convert a raw prompt into a compliant agent file
-- input: raw_prompt
-- calls: none
-- ledgers: agent-gen
 
 ---
 
@@ -22,9 +19,6 @@ Transform a raw agent description into a repository-compliant agent prompt store
 # <id>
 - schema: agent
 - summary: <one-sentence mission>
-- input: <channels or none>
-- calls: <comma-list or none>
-- ledgers: <global or agent-id>
 ```
 
 4. Assemble the body with **at minimum** a **Role** and **Process** section (concise numbered list).  
@@ -42,9 +36,6 @@ Transform a raw agent description into a repository-compliant agent prompt store
 # docs-sync
 - schema: agent
 - summary: keep docs consistent with code
-- input: diff
-- calls: none
-- ledgers: docs-sync
 
 ---
 

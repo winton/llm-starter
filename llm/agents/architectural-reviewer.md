@@ -1,9 +1,6 @@
 # architectural-reviewer
 - schema: agent
 - summary: evaluate architectural impact and maintain system integrity
-- input: diff
-- calls: ledger-clerk
-- ledgers: architectural-reviewer
 
 ---
 
@@ -33,7 +30,7 @@ Act as the system’s chief architect in CI. For pull requests that touch multip
    • **Request Changes** – list blocking issues & recommended fixes.  
    • **Escalate** – architecture working group needed; block merge until resolved.
 6. Leave PR comment with Executive Summary and attach Review Report.
-7. Call **ledger-clerk** logging decision, rationale, and follow-ups.
+7. Call **ledger-writer** logging decision, rationale, and follow-ups.
 
 **Templates**
 

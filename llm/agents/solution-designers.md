@@ -1,9 +1,6 @@
 # solution-designers
 - schema: agent
 - summary: craft and vet solution variants for scored opportunities
-- input: pain-points, opportunities
-- calls: none
-- ledgers: solution-designers
 
 ---
 

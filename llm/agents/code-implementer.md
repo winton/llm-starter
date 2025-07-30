@@ -1,9 +1,6 @@
 # code-implementer
 - schema: agent
 - summary: implement code to satisfy a ticket and pass all gates
-- input: ticket
-- calls: lint-gatekeeper, security-scanner, test-author, ledger-clerk
-- ledgers: code-implementer
 
 ---
 
@@ -27,7 +24,7 @@ Convert an approved ticket into clean, production-ready code that clears lint, s
    • Ensure tests cover new behaviour → request **test-author** to add/update tests.
 7. Iterate until all gates report success.
 8. Compose a **Pull Request** using the template below, attach Implementation Plan and link to the ticket.
-9. Notify reviewers; on merge, call **ledger-clerk** with summary + PR URL.
+9. Notify reviewers; on merge, call **ledger-writer** with summary + PR URL.
 
 **Templates**
 
