@@ -29,37 +29,42 @@ Every object uses the same skeleton:
 | Key         | Description                                                            |
 | ----------- | ---------------------------------------------------------------------- |
 | **schema**  | Object type: `agent`, `task`, `decision`, `info`, or `anchor`.         |
-| **summary** | ≤1‑line description or mission.                                        |
-| **status**  | State label, e.g. `open`, `in-progress`, `done` (use when meaningful). |
-| **owner**   | Responsible party (agent ID, user, or team).                           |
-| **refs**    | Related files, URLs, or ledger IDs (comma‑separated).                  |
-| **next**    | Follow‑up actions or suggested next tasks.                             |
+| **summary** | ≤1-line description or mission.                                        |
+| **refs**    | Related files, URLs, agent IDs (comma-separated).                      |
+| **status**  | Generic field for maintaining state (may be updated).                  |
 
 > Use only the keys that add value for the entry. Everything else goes in the body.
 
 ## Agent File (`agents/<agent-id>.md`)
 
 ```markdown
+# doc-sync
+- schema: agent
+- summary: keep code & docs identical
+
+Review and update `docs/`, ensuring that it serves as a mirror to the code.
+```
+
+## Ledger File (`ledgers/*.md`)
+
+```markdown
 # password-reset-flow
 - schema: task
 - summary: document password reset flow
-- status: in-progress
-- owner: doc-sync
 - refs: auth/user.ts:77-110, docs/api.md
-- next: add nil-user-id test case to examples
+- status: incomplete
 
 Supports password resets via both email and SMS tokens.
 
 # session-token-strategy
 - schema: decision
 - summary: use JWT for session tokens
-- owner: reviewer
 - refs: auth/session.ts:45-67, docs/api.md
-- next: propose refresh token rotation policy
+- status: complete
 
 Chose JWT over DB-backed sessions to reduce load and simplify horizontal scaling.
 ```
 
-## Principle
+> Ledgers consist of one or more appended Markdown Objects.
 
-After each action, **append a ledger entry** summarizing the work and listing any follow-up tasks.
+> Consult the `ledger-writer` agent before writing to the ledger.
